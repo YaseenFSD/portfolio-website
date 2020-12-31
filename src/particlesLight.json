@@ -2,14 +2,13 @@
   "autoPlay": true,
   "background": {
     "color": {
-      "value": "#1e1e1e"
+      "value": "#FFF"
     },
     "image": "",
     "position": "",
     "repeat": "",
     "size": "",
-    "opacity": 1,
-    "height": "100%"
+    "opacity": 1
   },
   "backgroundMask": {
     "composite": "destination-out",
@@ -32,16 +31,14 @@
     "delay": 0,
     "enable": false,
     "infections": 0,
-    "stages": [
-      {}
-    ]
+    "stages": []
   },
   "interactivity": {
     "detectsOn": "window",
     "events": {
       "onClick": {
-        "enable": true,
-        "mode": "repulse"
+        "enable": false,
+        "mode": []
       },
       "onDiv": {
         "selectors": [],
@@ -58,7 +55,7 @@
           "smooth": 10
         }
       },
-      "resize": false
+      "resize": true
     },
     "modes": {
       "attract": {
@@ -115,7 +112,7 @@
       },
       "repulse": {
         "distance": 50,
-        "duration": 0.4,
+        "duration": 4,
         "speed": 0.1
       },
       "slow": {
@@ -269,10 +266,10 @@
         }
       },
       "enable": false,
-      "mode": "absorb"
+      "mode": "bounce"
     },
     "color": {
-      "value": "#00ffff",
+      "value": "#8068f7",
       "animation": {
         "enable": false,
         "speed": 50,
@@ -353,21 +350,17 @@
         "enable": false
       },
       "outModes": {
-        "default": "out",
-        "left": "out",
-        "right": "out",
-        "top": "out",
-        "bottom": "out"
+        "default": "out"
       },
-      "random": true,
+      "random": false,
       "size": false,
       "speed": 2,
       "straight": false,
       "trail": {
         "enable": false,
-        "length": 0,
+        "length": 10,
         "fillColor": {
-          "value": "#1e1e1e"
+          "value": "#000000"
         }
       },
       "vibrate": false,
@@ -449,7 +442,8 @@
           "speed": 0,
           "sync": false
         }
-      }
+      },
+      "opacity": 1
     },
     "twinkle": {
       "lines": {
@@ -460,11 +454,14 @@
       "particles": {
         "enable": false,
         "frequency": 0.05,
-        "opacity": 1
+        "opacity": 1,
+        "color": {
+          "value": "#00FFFF"
+        }
       }
     }
   },
   "pauseOnBlur": true,
-  "pauseOnOutsideViewport": true,
+  "pauseOnOutsideViewport": false,
   "themes": []
 }

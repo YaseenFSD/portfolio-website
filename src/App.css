@@ -4,9 +4,24 @@
 
 .App {
   text-align: center;
+  /* position: relative; */
 }
 
 #tsparticles {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  position: fixed;
+}
+
+.projects-container {
+
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  overflow-y: scroll;
+  color: white;
+}
+
+.canvas-container {
+  position: relative;
 }
