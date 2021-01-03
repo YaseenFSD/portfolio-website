@@ -2,28 +2,136 @@ import { useState } from "react"
 import Particles from "react-particles-js"
 import particlesDark from "./particlesDark.json"
 import particlesLight from "./particlesLight.json"
-import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./components/styles/Themes";
-import { Button, Wrapper } from "./components/styles/CustomStyles"
+import MainDrawer from "./components/drawer/Drawer"
+import { ThemeProvider } from "@material-ui/styles"
+import { createMuiTheme } from "@material-ui/core/styles"
+import AppBar from "./components/app-bar/AppBar"
 import './App.css';
-
 
 
 function App() {
   const [theme, setTheme] = useState("dark")
+  // const [isDrawerOpen, setDrawerOpen] = useState(true)
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light")
   }
 
-  return (<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+  return (<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme} >
+    {/* <ThemeProvider theme={theme=== "light" ? lightTheme : darkTheme}> */}
+    {/* {console.log(lightTheme)} */}
     <div className="App">
+      {/* <div className="header"><DrawerOpener className="drawer-opener" isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen} /></div> */}
+      {/* <AppBar /> */}
+      <MainDrawer />
       <Particles params={theme === "light" ? particlesLight : particlesDark} />
-      <Wrapper className="main-container" >
+      <div className="main-container" >
         {/* <Wrapper theme={theme} className={`main-container ${theme === "dark" ? "dark-theme" : ""}`}> */}
 
-        <Button onClick={themeToggler}>Click here</Button>
+        <button onClick={themeToggler}>Click here</button>
         Test
-        </Wrapper>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        Test
+        </div>
     </div>
   </ThemeProvider>
   );

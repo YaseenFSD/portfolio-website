@@ -14,6 +14,7 @@
 }
 
 .main-container {
+  margin-top: 64px;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -25,18 +26,34 @@
   position: relative;
 }
 
-.main-container::-webkit-scrollbar {
-  width: 10px;               /* width of the entire scrollbar */
-}
-.main-container::-webkit-scrollbar-track {
-  background: cyan;        /* color of the tracking area */
-}
-.main-container::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid cyan;  /* creates padding around scroll thumb */
+@media only screen and (min-width:600px) {
+  .main-container::-webkit-scrollbar {
+    width: 10px;
+    /* width of the entire scrollbar */
+  }
+  .main-container::-webkit-scrollbar-track {
+    background: cyan;
+    /* color of the tracking area */
+  }
+  .main-container::-webkit-scrollbar-thumb {
+    background-color: blue;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid cyan;
+    /* creates padding around scroll thumb */
+  }
 }
 
 .dark-theme {
   color: white;
+}
+
+.drawer-opener {
+  text-align: left;
+}
+
+.header {
+  background: transparent;
+  text-align: left;
 }
