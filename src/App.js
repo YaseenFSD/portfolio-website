@@ -12,11 +12,7 @@ import './App.css';
 const useStyles = makeStyles(({
   mainContainer: {
     '&::-webkit-scrollbar-thumb': {
-      backgroundColor: (props => {
-        console.log(props)
-        console.log(props.palette.primary)
-        return props.palette.primary.main
-      }),
+      backgroundColor: (props => props.palette.primary.main),
       borderRadius: "20px"
     }
   }
@@ -38,106 +34,7 @@ function App() {
       <Particles params={theme === "light" ? particlesLight : particlesDark} />
       <div className={`main-container ${classes.mainContainer}`} >
         Scroll Test
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <div style={{height: "1000px"}}/>
         Scroll Test
         <div style={{ height: "200px" }}></div>
         {/* // ! No content put after this div will show on page properly */}
