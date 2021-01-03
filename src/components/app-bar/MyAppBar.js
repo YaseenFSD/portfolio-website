@@ -1,4 +1,4 @@
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from "@material-ui/icons/Menu"
@@ -40,22 +40,15 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-export default function LeftDrawer({themeToggler}) {
-  const theme = useTheme()
+export default function MyAppBar({themeToggler}) {
   const classes = useStyles()
-  console.log(theme)
 
 
   return (
     <div className={`${classes.appBarSize}`}>
-      {/* <CssBaseline/> */}
-      {/* {console.log(classes)} */}
       <AppBar className={`${classes.appBar} ${classes.appBarSize}`}>
         <div className={`${classes.flexChildSide} ${classes.flexChildLeftSide}`}>
           Logo
-          {/* <IconButton>
-            <MenuIcon />
-          </IconButton> */}
         </div>
         <div className={classes.flexChildMiddle}><div className={classes.content}>Title</div></div>
         <div className={`${classes.flexChildSide} ${classes.flexChildRightSide}`}>
@@ -65,6 +58,5 @@ export default function LeftDrawer({themeToggler}) {
           </IconButton>
         </div>
       </AppBar>
-      {/* <Drawer></Drawer> */}
     </div>)
 }
