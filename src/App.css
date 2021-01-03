@@ -4,7 +4,6 @@
 
 .App {
   text-align: center;
-  /* position: relative; */
 }
 
 #tsparticles {
@@ -21,32 +20,14 @@
   color: black;
 }
 
-.canvas-container {
-  position: relative;
-}
 
 @media only screen and (min-width:670px) {
   .main-container::-webkit-scrollbar {
     width: 7px;
     /* width of the entire scrollbar */
   }
-  .main-container::-webkit-scrollbar-thumb {
+  /* .main-container::-webkit-scrollbar-thumb {
     background-color: blue;
-    /* color of the scroll thumb */
     border-radius: 20px;
-    /* creates padding around scroll thumb */
-  }
-}
-
-.dark-theme {
-  color: white;
-}
-
-.drawer-opener {
-  text-align: left;
-}
-
-.header {
-  background: transparent;
-  text-align: left;
+  } */
 }
