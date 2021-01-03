@@ -13,23 +13,23 @@ import './App.css';
 function App() {
   const [theme, setTheme] = useState("dark")
   // const [isDrawerOpen, setDrawerOpen] = useState(true)
+  const currentTheme = createMuiTheme(theme === "light" ? lightTheme : darkTheme)
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light")
   }
 
-  return (<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme} >
+  return (<ThemeProvider theme={currentTheme} >
     {/* <ThemeProvider theme={theme=== "light" ? lightTheme : darkTheme}> */}
     {/* {console.log(lightTheme)} */}
     <div className="App">
       {/* <div className="header"><DrawerOpener className="drawer-opener" isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen} /></div> */}
       {/* <AppBar /> */}
-      <MainDrawer />
+      <MainDrawer themeToggler={themeToggler}/>
       <Particles params={theme === "light" ? particlesLight : particlesDark} />
       <div className="main-container" >
         {/* <Wrapper theme={theme} className={`main-container ${theme === "dark" ? "dark-theme" : ""}`}> */}
 
-        <button onClick={themeToggler}>Click here</button>
-        Test
+        Scroll Test
         <br/>
         <br/>
         <br/>
@@ -130,7 +130,9 @@ function App() {
         <br/>
         <br/>
         <br/>
-        Test
+        Scroll Test
+        <div style={{height: "200px"}}></div>
+        {/* // ! No content put after this div will show on page properly */}
         </div>
     </div>
   </ThemeProvider>
