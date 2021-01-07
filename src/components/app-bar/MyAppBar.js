@@ -1,6 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
+import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded';
+import Brightness3RoundedIcon from '@material-ui/icons/Brightness3Rounded';
 // import MenuIcon from "@material-ui/icons/Menu"
 
 
@@ -21,18 +23,19 @@ const useStyles = makeStyles(theme => ({
   },
 
   flexChildMiddle: {
-    flexGrow: 6
+    flex: "1 1 auto",
   },
   flexChildSide: {
-    flex: "0 0 300px",
+    flex: "0 0 70px",
   },
   flexChildRightSide: {
-    textAlign: "right"
+    textAlign: "right",
+    // marginRight: "20px"
   },
 
   flexChildLeftSide: {
     textAlign: "left",
-    paddingLeft: "20px", 
+    marginLeft: "20px", 
   },
   content: {
     textAlign: "center",
@@ -41,6 +44,7 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function MyAppBar({themeToggler}) {
+  const theme = useTheme()
   const classes = useStyles()
 
 
@@ -50,11 +54,11 @@ export default function MyAppBar({themeToggler}) {
         <div className={`${classes.flexChildSide} ${classes.flexChildLeftSide}`}>
           Logo
         </div>
-        <div className={classes.flexChildMiddle}><div className={classes.content}>Title</div></div>
+        <div className={classes.flexChildMiddle}><h1 className={classes.content}>YaseenFSD</h1></div>
         <div className={`${classes.flexChildSide} ${classes.flexChildRightSide}`}>
           <IconButton className={classes.iconButton}
             onClick={themeToggler}>
-            Toggle theme here
+            {theme.palette.type === "light" ? <Brightness3RoundedIcon/> : <WbSunnyRoundedIcon/> }
           </IconButton>
         </div>
       </AppBar>

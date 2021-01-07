@@ -8,10 +8,11 @@ export const darkTheme = {
             main: "#1e1e1e",
         },
         text: {
-            primary: "#FFF",
-            secondary: "#000"
+            primary: "#FFFFFF",
+            secondary: "#000000"
         }
-    }
+    },
+    shadow: "#616161"
 }
 
 export const lightTheme = {
@@ -21,11 +22,12 @@ export const lightTheme = {
             main: "#8068f7"
         },
         secondary: {
-            main: "#FFF"
+            main: "#FFFFFF"
         },
         text: {
-            primary: "#000",
-            secondary: "#FFF"
+            primary: "#000000",
+            secondary: "#FFFFFF"
         }
-    }
+    },
+    shadow: "#00000080"
 }
