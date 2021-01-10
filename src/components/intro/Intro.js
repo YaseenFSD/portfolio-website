@@ -22,8 +22,11 @@ const useStyles = makeStyles(theme => ({
         margin: "50px auto",
         color: theme.palette.text.secondary,
         padding: "70px 0px"
+    },
+        
+    header: {
+        color: theme.palette.text.primary,
     }
-
     // card: {
     //     backgroundColor: () => {
     //         return theme.palette.primary.main + "60"
@@ -44,6 +47,7 @@ const useStyles = makeStyles(theme => ({
 export const Intro = (props) => {
     const classes = useStyles()
     return (<>
+    <h2 className={classes.header}>Full Stack Developer (React.js and Node.js)</h2>
     <div className={`${classes.preSummary}`}>
         <div className={classes.imgHolder}>Image holder</div>
     </div>
