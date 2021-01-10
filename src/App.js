@@ -2,12 +2,12 @@ import { useState } from "react"
 import Particles from "react-particles-js"
 import particlesDark from "./particlesDark.json"
 import particlesLight from "./particlesLight.json"
-import { darkTheme, lightTheme } from "./components/styles/Themes";
-import MyAppBar from "./components/app-bar/MyAppBar"
+import { darkTheme, lightTheme } from "./components";
+import { MyAppBar } from "./components"
 import { ThemeProvider } from "@material-ui/styles"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { makeStyles } from '@material-ui/core/styles';
-import { Intro } from "./components/intro"
+import { Intro } from "./components"
 import './App.css';
 
 const useStyles = makeStyles(({
@@ -40,7 +40,7 @@ function App() {
         Scroll Test
         <div style={{ height: "1000px" }} />
         Scroll Test
-        
+
         <div style={{ height: "200px" }}></div>
         {/* // ! No content put after this div will show on page properly */}
       </div>

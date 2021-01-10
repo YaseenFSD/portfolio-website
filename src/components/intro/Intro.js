@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     // }
 }))
 
-export const Intro = (props) => {
+export default function Intro(){
     const classes = useStyles()
     return (<>
     <h2 className={classes.header}>Full Stack Developer (React.js and Node.js)</h2>
