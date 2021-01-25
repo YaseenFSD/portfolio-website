@@ -17,16 +17,16 @@ const useStyles = makeStyles(theme => ({
     },
     card: {
         backgroundColor: () => {
-            return theme.palette.primary.main + "60"
+            return theme.palette.primary.main + "B9"
         },
         margin: "40px auto",
         width: "400px",
         height: "600px",
-        color: theme.palette.text.primary,
+        color: theme.palette.text.secondary,
         boxShadow: () => {
             return `10px 10px 10px ${theme.shadow}`
         },
-        backdropFilter: "blur(3px)",
+        // backdropFilter: "blur(3px)",
         borderRadius: "10px",
     },
 
@@ -70,7 +70,7 @@ export const Projects = (props) => {
     // console.log(results)
     return (<div className={classes.cardsContainer}>
         {results.data.sort((a, b) => b.project_level - a.project_level).map((project) => {
-            return (<div key={v4()} style={{ minWidth: "450px", margin: "0 auto" }}>
+            return (<div key={v4()} style={{ minWidth: "450px", margin: "0 auto", }}>
                 {/* This parent div is used to avoid margin collapsing while keeping it centered with 'margin 0 auto' */}
                 <div className={classes.card}>
                     <h3 className={classes.projectTitle}>{project.name}</h3>
