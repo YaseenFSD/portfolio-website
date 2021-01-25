@@ -1,13 +1,13 @@
 import { useState } from "react"
 import Particles from "react-particles-js"
+import { ReactQueryDevtools } from "react-query/devtools"
 import particlesDark from "./particlesDark.json"
 import particlesLight from "./particlesLight.json"
 import { darkTheme, lightTheme } from "./components";
-import { MyAppBar } from "./components"
+import { MyAppBar, Projects, Intro } from "./components"
 import { ThemeProvider } from "@material-ui/styles"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { makeStyles } from '@material-ui/core/styles';
-import { Intro } from "./components"
 import './App.css';
 
 const useStyles = makeStyles(({
@@ -34,8 +34,10 @@ function App() {
       <MyAppBar themeToggler={themeToggler} />
       <Particles params={theme === "light" ? particlesLight : particlesDark} />
       <div className={`main-container ${classes.mainContainer}`} >
-        {/* //Todo: render projects here */}
         <Intro />
+
+        {/* //Todo: render projects here */}
+        <Projects />
 
         Scroll Test
         <div style={{ height: "1000px" }} />
@@ -45,6 +47,7 @@ function App() {
         {/* // ! No content put after this div will show on page properly */}
       </div>
     </div>
+    <ReactQueryDevtools/>
   </ThemeProvider>
   );
 }
