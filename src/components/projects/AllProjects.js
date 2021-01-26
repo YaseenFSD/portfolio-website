@@ -1,12 +1,9 @@
+import {Project} from "./Project"
 import axios from "axios"
 import { useQuery } from "react-query"
 import { RingLoader } from "react-spinners"
-import { useTheme, makeStyles, Button } from "@material-ui/core"
-import { v4 } from "uuid"
-import GithubIMG from "../images/github.png"
-import LiveTvOutlinedIcon from '@material-ui/icons/LiveTvOutlined'
+import { useTheme, makeStyles } from "@material-ui/core"
 
-const CARDSIZE = 500
 
 const useStyles = makeStyles(theme => ({
     cardsContainer: {
@@ -16,47 +13,12 @@ const useStyles = makeStyles(theme => ({
         flexBasis: "100px",
         margin: "20px auto",
     },
-    card: {
-        backgroundColor: () => {
-            return theme.palette.primary.main + "B9"
-        },
-        margin: "40px auto",
-        width: CARDSIZE + "px",
-        minHeight: "650px",
-        height: "fit-content",
-        color: theme.palette.text.secondary,
-        boxShadow: () => {
-            return `10px 10px 10px ${theme.shadow}`
-        },
-        // backdropFilter: "blur(3px)",
-        borderRadius: "10px",
-    },
-
-    projectTitle: {
-        padding: "15px",
-        margin: 0
-    },
-
-    projectList: {
-        "& li": {
-            listStyleType: "none",
-            textAlign: "left",
-            margin: "10px auto"
-        }
-    },
-    urlButton: {
-        color: theme.palette.primary.main,
-        border: "1px solid black"
-    }
 }))
 
 const fetchData = async (QueryKey) => {
     return await axios.get("https://yaseenfsd-api.herokuapp.com/")
 }
 
-const openURLnewTab = (URL) => {
-    window.open(URL)
-}
 
 export const AllProjects = (props) => {
     const theme = useTheme()
@@ -69,45 +31,7 @@ export const AllProjects = (props) => {
         console.log(error)
         return (<div>{error.message}</div>)
     }
-    // console.log(results)
     return (<div className={classes.cardsContainer}>
-        {results.data.sort((a, b) => b.project_level - a.project_level).map((project) => {
-            // <Project data={project}/>
-            return (<div key={v4()} style={{ minWidth: `${CARDSIZE + 50}px`, margin: "0 auto", }}>
-                {/* This parent div is used to avoid margin collapsing while keeping it centered with 'margin 0 auto' */}
-                <div className={classes.card}>
-                    <h3 className={classes.projectTitle}>{project.name}</h3>
-                    <img style={{ width: "inherit" }} src={`https://${project.img_url}`} alt={`Project ${project.name}`} />
-                    <ul className={classes.projectList}>
-                        <li key={v4()}>
-                            <div>
-                                <Button className={classes.urlButton} onClick={() => openURLnewTab(`https://${project.repo_link}`)}><img style={{ width: "20px" }} src={GithubIMG} alt="Github Icon" />Github URL
-                                </Button>
-                                {project.website_url ? <><Button className={classes.urlButton}
-                                    onClick={() => openURLnewTab(`https://${project.website_url}`)}>
-                                    <LiveTvOutlinedIcon /> Live
-                                </Button></> : null}
-                            </div>
-                        </li>
-                        <li key={v4()}>Team size: {project.team_count}</li>
-                        <li key={v4()}>Main Language: {project.main_language}</li>
-                        <li key={v4()}>
-                            Some Technologies used:<ul>
-                                {project.techs_used.map((tech) => (<li key={v4()} style={{ listStyleType: "initial" }}>{tech}</li>))}
-                            </ul>
-                        </li>
-                        <li key={v4()}>
-                            <div>More info:
-                                <div>
-
-                                    <p style={{ textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{project.more_info}</p>
-
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>)
-        })}
+        {results.data.sort((a, b) => b.project_level - a.project_level).map(project => <Project data={project}/>)}
     </div>)
 }
