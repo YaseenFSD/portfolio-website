@@ -32,6 +32,6 @@ export const AllProjects = (props) => {
         return (<div>{error.message}</div>)
     }
     return (<div className={classes.cardsContainer}>
-        {results.data.sort((a, b) => b.project_level - a.project_level).map(project => <Project data={project}/>)}
+        {results.data.sort((a, b) => b.project_level - a.project_level).map(project => <Project key={project._id} data={project}/>)}
     </div>)
 }

@@ -4,7 +4,8 @@ import { makeStyles, Button } from "@material-ui/core"
 import LiveTvOutlinedIcon from '@material-ui/icons/LiveTvOutlined'
 import GithubIMG from "../images/github.png"
 
-const CARDSIZE = 500
+const CARDSIZE = 520
+const MINCARDSIZE = 255
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -12,7 +13,9 @@ const useStyles = makeStyles(theme => ({
             return theme.palette.primary.main + "B9"
         },
         margin: "40px auto",
-        width: CARDSIZE + "px",
+        width: "90%",
+        minWidth: MINCARDSIZE + "px",
+        maxWidth: CARDSIZE + "px",
         minHeight: "650px",
         height: "fit-content",
         color: theme.palette.text.secondary,
@@ -76,17 +79,17 @@ export const Project = ({ data }) => {
     const shrink = (reference) => {
         setIsExpanded(false)
     }
-    return (<div key={v4()} style={{ minWidth: `${CARDSIZE + 50}px`, margin: "0 auto", }}>
+    return (<div style={{ minWidth: `${MINCARDSIZE + 50}px`, margin: "0 auto", }}>
         {/* This parent div is used to avoid margin collapsing while keeping it centered with 'margin 0 auto' */}
         <div className={classes.card}>
             <h3 className={classes.projectTitle}>{data.name}</h3>
-            <img style={{ width: "inherit" }} src={`https://${data.img_url}`} alt={`Project ${data.name}`} />
+            <img style={{ width: "100%" }} src={`https://${data.img_url}`} alt={`Project ${data.name}`} />
             <ul className={classes.projectList}>
                 <li key={v4()}>
                     <div>
                         <Button className={classes.urlButton} onClick={() => openURLnewTab(`https://${data.repo_link}`)}><img style={{ width: "20px" }} src={GithubIMG} alt="Github Icon" />Github URL
                 </Button>
-                        {data.website_url ? <><Button className={classes.urlButton}
+                        {data.website_url ? <><Button key={v4()} className={classes.urlButton}
                             onClick={() => openURLnewTab(`https://${data.website_url}`)}>
                             <LiveTvOutlinedIcon /> Live
                 </Button></> : null}
@@ -105,7 +108,7 @@ export const Project = ({ data }) => {
                             <p className={isExpanded ? classes.openParagraph : classes.closedParagraph}>{data.more_info}</p>
                         <div style={{textAlign: "center"}}>
                             {
-                                isExpanded ? <span className={classes.shrinkOrExpand} onClick={shrink}>Shrink</span> : <span className={classes.shrinkOrExpand} onClick={expand}>Expand</span>
+                                isExpanded ? <span  className={classes.shrinkOrExpand} onClick={shrink}>Shrink</span> : <span className={classes.shrinkOrExpand} onClick={expand}>Expand</span>
                             }
                         </div>
                     </div>
