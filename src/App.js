@@ -24,7 +24,6 @@ function App() {
   const [theme, setTheme] = useState("dark")
   const currentTheme = createMuiTheme(theme === "light" ? lightTheme : darkTheme)
   const classes = useStyles(currentTheme)
-  // console.log(currentTheme)
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light")
   }
@@ -36,18 +35,13 @@ function App() {
       <div className={`main-container ${classes.mainContainer}`} >
         <Intro />
 
-        {/* //Todo: render projects here */}
         <AllProjects />
-
-        Scroll Test
-        <div style={{ height: "1000px" }} />
-        Scroll Test
-
+        {/* // TODO: add footer  */}
         <div style={{ height: "200px" }}></div>
-        {/* // ! No content put after this div will show on page properly */}
+        {/* // ! No content put after this div will show on page*/}
       </div>
     </div>
-    <ReactQueryDevtools/>
+    <ReactQueryDevtools />
   </ThemeProvider>
   );
 }

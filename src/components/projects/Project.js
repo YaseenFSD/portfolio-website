@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
         boxShadow: () => {
             return `10px 10px 10px ${theme.shadow}`
         },
-        // backdropFilter: "blur(3px)",
         borderRadius: "10px",
     },
 
@@ -72,11 +71,11 @@ export const Project = ({ data }) => {
         window.open(URL)
     }
 
-    const expand = (reference) => {
+    const expand = () => {
         setIsExpanded(true)
     }
 
-    const shrink = (reference) => {
+    const shrink = () => {
         setIsExpanded(false)
     }
     return (<div style={{ minWidth: `${MINCARDSIZE + 50}px`, margin: "0 auto", }}>
@@ -89,13 +88,14 @@ export const Project = ({ data }) => {
                     <div>
                         <Button className={classes.urlButton} onClick={() => openURLnewTab(`https://${data.repo_link}`)}><img style={{ width: "20px" }} src={GithubIMG} alt="Github Icon" />Github URL
                 </Button>
-                        {data.website_url ? <><Button key={v4()} className={classes.urlButton}
+                        {data.website_url ? <Button className={classes.urlButton}
                             onClick={() => openURLnewTab(`https://${data.website_url}`)}>
                             <LiveTvOutlinedIcon /> Live
-                </Button></> : null}
+                </Button> : null}
                     </div>
                 </li>
                 <li key={v4()}>Team size: {data.team_count}</li>
+                <li key={v4()}>Description: {data.description}</li>
                 <li key={v4()}>Main Language: {data.main_language}</li>
                 <li key={v4()}>
                     Some Technologies used:<ul>
