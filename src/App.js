@@ -4,7 +4,7 @@ import { ReactQueryDevtools } from "react-query/devtools"
 import particlesDark from "./particlesDark.json"
 import particlesLight from "./particlesLight.json"
 import { darkTheme, lightTheme } from "./components";
-import { MyAppBar, Projects, Intro } from "./components"
+import { MyAppBar, AllProjects, Intro } from "./components"
 import { ThemeProvider } from "@material-ui/styles"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { makeStyles } from '@material-ui/core/styles';
@@ -37,7 +37,7 @@ function App() {
         <Intro />
 
         {/* //Todo: render projects here */}
-        <Projects />
+        <AllProjects />
 
         Scroll Test
         <div style={{ height: "1000px" }} />

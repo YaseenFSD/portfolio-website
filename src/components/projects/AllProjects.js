@@ -6,10 +6,11 @@ import { v4 } from "uuid"
 import GithubIMG from "../images/github.png"
 import LiveTvOutlinedIcon from '@material-ui/icons/LiveTvOutlined'
 
+const CARDSIZE = 500
 
 const useStyles = makeStyles(theme => ({
     cardsContainer: {
-        maxWidth: "1000px",
+        maxWidth: "1200px",
         display: "flex",
         flexWrap: "wrap",
         flexBasis: "100px",
@@ -20,8 +21,9 @@ const useStyles = makeStyles(theme => ({
             return theme.palette.primary.main + "B9"
         },
         margin: "40px auto",
-        width: "400px",
-        height: "600px",
+        width: CARDSIZE + "px",
+        minHeight: "650px",
+        height: "fit-content",
         color: theme.palette.text.secondary,
         boxShadow: () => {
             return `10px 10px 10px ${theme.shadow}`
@@ -56,7 +58,7 @@ const openURLnewTab = (URL) => {
     window.open(URL)
 }
 
-export const Projects = (props) => {
+export const AllProjects = (props) => {
     const theme = useTheme()
     const classes = useStyles(theme)
     const { data: results, isError, isLoading, error } = useQuery("projectsData", fetchData)
@@ -70,7 +72,8 @@ export const Projects = (props) => {
     // console.log(results)
     return (<div className={classes.cardsContainer}>
         {results.data.sort((a, b) => b.project_level - a.project_level).map((project) => {
-            return (<div key={v4()} style={{ minWidth: "450px", margin: "0 auto", }}>
+            // <Project data={project}/>
+            return (<div key={v4()} style={{ minWidth: `${CARDSIZE + 50}px`, margin: "0 auto", }}>
                 {/* This parent div is used to avoid margin collapsing while keeping it centered with 'margin 0 auto' */}
                 <div className={classes.card}>
                     <h3 className={classes.projectTitle}>{project.name}</h3>
@@ -81,7 +84,7 @@ export const Projects = (props) => {
                                 <Button className={classes.urlButton} onClick={() => openURLnewTab(`https://${project.repo_link}`)}><img style={{ width: "20px" }} src={GithubIMG} alt="Github Icon" />Github URL
                                 </Button>
                                 {project.website_url ? <><Button className={classes.urlButton}
-                                    onClick={() => openURLnewTab(`https://${project.web}`)}>
+                                    onClick={() => openURLnewTab(`https://${project.website_url}`)}>
                                     <LiveTvOutlinedIcon /> Live
                                 </Button></> : null}
                             </div>
@@ -94,7 +97,13 @@ export const Projects = (props) => {
                             </ul>
                         </li>
                         <li key={v4()}>
+                            <div>More info:
+                                <div>
 
+                                    <p style={{ textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{project.more_info}</p>
+
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
