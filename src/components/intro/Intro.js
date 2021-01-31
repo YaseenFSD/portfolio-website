@@ -27,21 +27,6 @@ const useStyles = makeStyles(theme => ({
     header: {
         color: theme.palette.text.primary,
     }
-    // card: {
-    //     backgroundColor: () => {
-    //         return theme.palette.primary.main + "60"
-    //     }, 
-    //     margin: "20px auto",
-    //     width: "90%",
-    //     height: "400px",
-    //     color: theme.palette.text.primary,
-    //     boxShadow: () => {
-    //         console.log(theme)
-    //         return `10px 10px 10px ${theme.shadow}`
-    //     },
-    //     backdropFilter: "blur(3px)",
-    //     borderRadius: "10px",
-    // }
 }))
 
 export default function Intro(){

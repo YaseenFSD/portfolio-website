@@ -4,7 +4,7 @@ import { ReactQueryDevtools } from "react-query/devtools"
 import particlesDark from "./particlesDark.json"
 import particlesLight from "./particlesLight.json"
 import { darkTheme, lightTheme } from "./components";
-import { MyAppBar, AllProjects, Intro } from "./components"
+import { MyAppBar, AllProjects, Intro, Footer } from "./components"
 import { ThemeProvider } from "@material-ui/styles"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { makeStyles } from '@material-ui/core/styles';
@@ -42,9 +42,8 @@ function App() {
         <Intro />
 
         <AllProjects />
-        {/* // TODO: add footer  */}
-        <div style={{ height: "200px" }}></div>
-        {/* // ! No content put after this div will show on page*/}
+        
+        <Footer/>
       </div>
     </div>
     <ReactQueryDevtools />
