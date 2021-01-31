@@ -1,21 +1,22 @@
+import { useState } from "react"
+import { APPBARHEIGHT } from "../../constants"
+import { DarkModeHint } from "../dark-mode-hint"
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded';
 import Brightness3RoundedIcon from '@material-ui/icons/Brightness3Rounded';
-// import MenuIcon from "@material-ui/icons/Menu"
-
-
 
 const useStyles = makeStyles(theme => ({
   appBar: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    zIndex: 0
   },
 
   appBarSize: {
-    height: "60px"
+    height: APPBARHEIGHT + "px"
   },
 
   iconButton: {
@@ -30,12 +31,11 @@ const useStyles = makeStyles(theme => ({
   },
   flexChildRightSide: {
     textAlign: "right",
-    // marginRight: "20px"
   },
 
   flexChildLeftSide: {
     textAlign: "left",
-    marginLeft: "20px", 
+    marginLeft: "20px",
   },
   content: {
     textAlign: "center",
@@ -43,11 +43,17 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-export default function MyAppBar({themeToggler}) {
+export default function MyAppBar({ themeToggler }) {
   const theme = useTheme()
   const classes = useStyles()
+  const [renderHint, setRenderHint] = useState(true)
+  // useEffect(() => {
+  //   if (){
+  //     setRenderHint(true)
+  //   }
+  // }, [])
 
-
+  // console.log(iconRef.current)
   return (
     <div className={`${classes.appBarSize}`}>
       <AppBar className={`${classes.appBar} ${classes.appBarSize}`}>
@@ -58,8 +64,9 @@ export default function MyAppBar({themeToggler}) {
         <div className={`${classes.flexChildSide} ${classes.flexChildRightSide}`}>
           <IconButton className={classes.iconButton}
             onClick={themeToggler}>
-            {theme.palette.type === "light" ? <Brightness3RoundedIcon/> : <WbSunnyRoundedIcon/> }
+            {theme.palette.type === "light" ? <Brightness3RoundedIcon /> : <WbSunnyRoundedIcon />}
           </IconButton>
+          {renderHint ? <DarkModeHint /> : null}
         </div>
       </AppBar>
     </div>)
