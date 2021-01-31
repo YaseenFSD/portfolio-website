@@ -46,7 +46,6 @@ export default function MyAppBar({ themeToggler }) {
   const theme = useTheme()
   const classes = useStyles()
 
-  // console.log(iconRef.current)
   return (
     <div className={`${classes.appBarSize}`}>
       <AppBar className={`${classes.appBar} ${classes.appBarSize}`}>
