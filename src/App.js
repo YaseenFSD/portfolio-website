@@ -21,11 +21,17 @@ const useStyles = makeStyles(({
 
 
 function App() {
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
   const currentTheme = createMuiTheme(theme === "light" ? lightTheme : darkTheme)
   const classes = useStyles(currentTheme)
   const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light")
+    if (theme === "light") {
+      localStorage.setItem("theme", "dark")
+      setTheme("dark")
+    } else {
+      localStorage.setItem("theme", "light")
+      setTheme("light")
+    }
   }
 
   return (<ThemeProvider theme={currentTheme} >

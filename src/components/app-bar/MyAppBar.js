@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { APPBARHEIGHT } from "../../constants"
 import { DarkModeHint } from "../dark-mode-hint"
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -46,12 +45,6 @@ const useStyles = makeStyles(theme => ({
 export default function MyAppBar({ themeToggler }) {
   const theme = useTheme()
   const classes = useStyles()
-  const [renderHint, setRenderHint] = useState(true)
-  // useEffect(() => {
-  //   if (){
-  //     setRenderHint(true)
-  //   }
-  // }, [])
 
   // console.log(iconRef.current)
   return (
@@ -66,7 +59,7 @@ export default function MyAppBar({ themeToggler }) {
             onClick={themeToggler}>
             {theme.palette.type === "light" ? <Brightness3RoundedIcon /> : <WbSunnyRoundedIcon />}
           </IconButton>
-          {renderHint ? <DarkModeHint /> : null}
+         <DarkModeHint />
         </div>
       </AppBar>
     </div>)
