@@ -9,9 +9,7 @@ const MINCARDSIZE = 255
 
 const useStyles = makeStyles(theme => ({
     card: {
-        backgroundColor: () => {
-            return theme.palette.primary.main + "B9"
-        },
+        backgroundColor: theme.palette.primary.main + "B9",
         margin: "40px auto",
         width: "90%",
         minWidth: MINCARDSIZE + "px",
@@ -19,9 +17,7 @@ const useStyles = makeStyles(theme => ({
         minHeight: "650px",
         height: "fit-content",
         color: theme.palette.text.secondary,
-        boxShadow: () => {
-            return `10px 10px 10px ${theme.shadow}`
-        },
+        boxShadow: `10px 10px 10px ${theme.shadow}`,
         borderRadius: "10px",
     },
 
