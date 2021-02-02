@@ -7,8 +7,8 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.text.secondary,
-        padding: "60px 0px",
-        margin: "100px auto",
+        padding: "60px 0 200px 0",
+        margin: "60px auto",
     },
     url: {
         textAlign: "center",
