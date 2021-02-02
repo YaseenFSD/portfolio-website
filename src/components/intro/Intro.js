@@ -38,8 +38,8 @@ export default function Intro(){
         <img className={classes.imgHolder} src={VectorDrawing} alt="Drawing of Yaseen" />
     </div>
     <div className={classes.projectSummary}>
-        <h2>About the tech I'm using</h2>
-        <p>I started off by learning HTML, CSS, Javacript. I then got introduced to a whole new world of Node.js and React.js and I have found what I enjoy a lot. I am still learning other technologies to explore more options and see what I also like. </p>
+        <h2>About the techs I'm using and learning</h2>
+        <p>I started off by learning HTML, CSS, Javacript. I then got introduced to a whole new world of Node.js and React.js and I have enjoyed them a lot. I am still learning other technologies to explore more options and see what else I like. </p>
         <p>Some of those other technologies that I am currently learning are Python and Django.</p> 
         <h3 className={classes.projectIntro}>Here are some of the projects that I am proud of making.</h3>
     </div>
