@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 export const DarkModeHint = () => {
-  const [visible, setVisible] = useState(!(localStorage.getItem("theme")), true)
+  const [visible, setVisible] = useState(!(localStorage.getItem("theme")))
   const classes = useStyles()
   useEffect(() => {
     let fadeOut = setInterval(() => setVisible(false), 4500)
