@@ -16,7 +16,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const fetchData = async (QueryKey) => {
-    return await axios.get("https://yaseenfsd-api.herokuapp.com/")
+    console.log(process.env.REACT_APP_API_ENDPOINT)
+    return await axios.get(process.env.REACT_APP_API_ENDPOINT)
 }
 
 
